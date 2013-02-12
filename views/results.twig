@@ -1,0 +1,23 @@
+{% extends layout %}
+
+{% block content %}
+
+<h2>Rezultate</h2>
+
+    <table class="table table-bordered table-hover table-striped">
+        <tr>
+            <th>Nume</th>
+            <th>E-mail</th>
+            <th>Data/Ora</th>
+            <th>Răspunsuri corecte</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.startdate }}</td>
+            <td>{{ item.correct }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends layout %}
+
+{% block content %}
+    <div class="row">
+        <div class="span4 offset2">
+            <form class="form-signin" method="post" action="start">
+                <h2 class="form-signin-heading">Test</h2>
+                <p>Introduceţi datele dumneavoastră</p>
+                <input type="text" class="input-block-level" placeholder="Nume" name="name">
+                <input type="text" class="input-block-level" placeholder="Email" name="email">
+
+                <button class="btn btn-large btn-primary" type="submit">Începeţi testul</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

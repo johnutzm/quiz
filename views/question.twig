@@ -1,0 +1,27 @@
+{% extends layout %}
+
+{% block content %}
+<p>{{ name }} ({{ email }})</p>
+
+<h2>{{ text }}</h2>
+    <form action="" method="post">
+
+        <ul>
+            {% for id,answer in answers %}
+            <li>
+                <label class="checkbox">
+                    {% if type == 'multiple' %}
+                    <input type="checkbox" name="answer[]" value="{{ id }}" />
+                    {% elseif type == 'single' %}
+                    <input type="radio" name="answer" value="{{ id }}" />
+                    {% endif %}
+                    {{ answer }}
+                </label>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <button class="btn btn-large btn-primary" type="submit">Salvează</button>
+
+    </form>
+{% endblock %}
