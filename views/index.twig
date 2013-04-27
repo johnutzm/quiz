@@ -3,7 +3,7 @@
 {% block content %}
     <div class="row">
         <div class="span4 offset2">
-            <form class="form-signin" method="post" action="start">
+            <form class="form-signin" method="post" action="{{ app.request.baseUrl }}/start">
                 <h2 class="form-signin-heading">Test</h2>
                 <p>Introduceţi datele dumneavoastră</p>
                 <input type="text" class="input-block-level" placeholder="Nume" name="name">

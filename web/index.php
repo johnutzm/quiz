@@ -55,7 +55,7 @@ $app->post('/start', function(Request $request) use($app) {
 		'name' => $request->get('name'),
 		'email' => $request->get('email'),
 	);
-	return $app->redirect('/question/1');
+	return $app->redirect($app['request']->getBaseUrl().'/question/1');
 });
 
 $app->get('/question/{id}', function($id) use($app) {
@@ -127,7 +127,7 @@ $app->post('/question/{id}', function($id, Request $request) use($app) {
 
 	$url = $app['questions']->question->count() <= $id ? '/finish' : '/question/' . ($id+1);
 
-	return $app->redirect($url);
+	return $app->redirect($app['request']->getBaseUrl().$url);
 
 });
 

@@ -15,5 +15,5 @@ CREATE TABLE sessions_answers
     date_start TEXT NOT NULL,
     date_end TEXT,
     answer TEXT,
-    correct TEXT NOT NULL
+    correct TEXT
 );
