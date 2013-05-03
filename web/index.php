@@ -95,19 +95,19 @@ $app->get('/question/{id}', function($id) use($app) {
 });
 
 $app->post('/question/{id}', function($id, Request $request) use($app) {
+	$correctAnswers = [];
 
 	if($question = $app['questions']->question[$id-1]) {
-		
-		$correctAnswers = [];
 		for ($i = 0; $i < $question->answers->answer->count(); $i++) {
-			if ($question->answers->answer[$i]->attributes()->correct) {
+			$v = (string)$question->answers->answer[$i]->attributes()->correct;
+			if (!(empty($v) || 'false' == $v) || 'true' == $v) {
 				$correctAnswers[] = $i;
 			}
 		}
 	}
 
 	$answer = (array)$request->get('answer');
-	$correct = $correctAnswers == $answer;
+	$correct = ($correctAnswers == $answer);
 
 	/* @var $db PDO */
 	$db = $app['db'];
