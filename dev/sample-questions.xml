@@ -1,0 +1,20 @@
+<!--
+	Copy this file to data/questions.xml
+-->
+<questions>
+	<question type="single">
+		<text>The first question. It's single. The correct answer is the first one</text>
+		<answers>
+			<answer correct="true">yeah, it's me!</answer>
+			<answer correct="false">I'm wrong...</answer>
+		</answers>
+	</question>
+	<question type="multiple">
+		<text>The second question. It's multiple</text>
+		<answers>
+			<answer correct="true">I'm correct</answer>
+			<answer correct="true">I'm correct too</answer>
+			<answer correct="false">I'm wrong</answer>
+		</answers>
+	</question>
+</questions>
