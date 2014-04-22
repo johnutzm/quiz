@@ -1,0 +1,5 @@
+imports:
+  - php
+tools:
+  php_pdepend: true
+  php_analyzer: true
